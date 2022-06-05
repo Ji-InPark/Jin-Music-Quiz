@@ -1,6 +1,6 @@
 <template>
   <div id="body">
-    <div class="explain-container">
+    <div class="content-container">
       <div class="box explain">
         여기에 진행 방식 설명 같은거 적고
       </div>
@@ -9,20 +9,31 @@
       </div>
     </div>
     <div class="submit-container">
-      <button id="submit-button">
-        여기는 이제 시작
+      <button v-on:click="startQuiz" id="submit-button">
+        시작하기!
       </button>
     </div>
   </div>
 </template>
 
+<script>
+export default {
+  methods:{
+    startQuiz: function (){
+      console.log("버튼 눌렸는지 테스트")
+    }
+  }
+}
+</script>
+
 <style>
 #body{
   background-image: url("../../assets/beach.jpg");
   background-size: 100%;
+  padding: 1em;
 }
 
-.explain-container {
+.content-container {
   height: 100%;
   min-height: 100%;
   display: flex;
@@ -34,8 +45,9 @@
   height: 30em;
   border: 30px;
   border-radius: 3em;
-  opacity: 0.8;
-  margin-top: 8em;
+  color: white;
+  opacity: 0.95;
+  margin-top: 5em;
   margin-left: 20px;
   margin-right: 20px;
   align-items: center;
