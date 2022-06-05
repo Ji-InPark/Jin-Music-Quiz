@@ -10,7 +10,7 @@
     </div>
     <div class="submit-container">
       <button v-on:click="startQuiz" id="submit-button">
-        시작하기!
+        시작하기
       </button>
     </div>
   </div>
@@ -27,6 +27,13 @@ export default {
 </script>
 
 <style>
+@font-face {
+  font-family: 'SUIT-Medium';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Medium.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
 #body{
   background-image: url("../../assets/beach.jpg");
   background-size: 100%;
@@ -42,30 +49,30 @@ export default {
 
 .box {
   display: flex;
-  height: 30em;
+  height: 480px;
   border: 30px;
-  border-radius: 3em;
-  color: white;
-  opacity: 0.95;
+  border-radius: 1em;
+  color: #1B130F;
+  background-color: #ffe085;
+  opacity: 0.9;
   margin-top: 5em;
   margin-left: 20px;
   margin-right: 20px;
-  align-items: center;
-  justify-content: center;
+  padding: 24px;
+  font-family: SUIT-Medium;
+  font-size: 18px;
 }
 
 .explain {
   flex: 2;
   max-width: 40em;
   min-width: 20em;
-  background-color: #61BFAD;
 }
 
 .buttons {
   flex: 1;
   max-width: 30em;
   min-width: 15em;
-  background-color: #61BFAD;
 }
 
 .submit-container {
@@ -76,10 +83,11 @@ export default {
 
 #submit-button {
   display: block;
-  height: 5em;
+  height: 60px;
   width: 60%;
   max-width: 60em;
   text-align: center;
+  font-size: 2em;
   border: none;
   border-radius: 3em;
   background-color: #F2930C;

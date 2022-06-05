@@ -5,19 +5,19 @@
 </template>
 
 <style>
-  @font-face {
-  font-family: 'BMJUA';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff') format('woff');
+@font-face {
+  font-family: 'SUIT-Medium';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Medium.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
-  }
-
+}
   #header{
     display: flex;
     justify-content: center;
-    font-family: 'BMJUA';
-    font-size: 100px;
+    font-family: SUIT-Medium;
+    font-size: 72px;
     color: white;
     background-color: #29CB9D;
+    padding: 0.2em;
   }
 </style>
