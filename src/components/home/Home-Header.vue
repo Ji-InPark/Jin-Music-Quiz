@@ -17,7 +17,8 @@
     font-family: SUIT-Medium;
     font-size: 72px;
     color: white;
-    background-color: #29CB9D;
+    background-color: #86F0C8;
     padding: 0.2em;
+    opacity: 0.9;
   }
 </style>
