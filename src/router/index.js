@@ -7,7 +7,7 @@ const routes = [
   },
   {
     path: '/home',
-    component: () => import('../views/Home-Page')
+    component: () => import('../views/home-page')
   },
   {
     path: '/quiz'

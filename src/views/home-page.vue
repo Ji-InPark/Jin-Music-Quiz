@@ -5,9 +5,9 @@
 </template>
 
 <script>
-import HomeHeader from '../components/home/Home-Header'
-import HomeBody from '../components/home/Home-Body'
-import HomeFooter from '../components/home/Home-Footer'
+import HomeHeader from '../components/home/home-header'
+import HomeBody from '../components/home/home-body'
+import HomeFooter from '../components/home/home-footer'
 
 export default {
   components: {
