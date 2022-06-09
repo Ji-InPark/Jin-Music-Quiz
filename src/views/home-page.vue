@@ -1,7 +1,7 @@
 <template>
-  <HomeHeader></HomeHeader>
-  <HomeBody></HomeBody>
-  <HomeFooter></HomeFooter>
+  <HomeHeader/>
+  <HomeBody/>
+  <HomeFooter/>
 </template>
 
 <script>
