@@ -2,7 +2,12 @@
   <div id="body">
     <div class="content-container">
       <div class="box explain">
-        여기에 진행 방식 설명 같은거 적고
+        <h1 id="explain-title">방송에서 많이 봤던 1초 듣고 음악 맞히기!!</h1>
+        <br/>
+        <h3>난이도 설명</h3>
+        <p>쉬움:</p>
+        <p>보통:</p>
+        <p>어려움:</p>
       </div>
       <div class="box buttons">
         여기에 난이도와 년도 선택하는 거 넣고
@@ -65,8 +70,13 @@ export default {
 
 .explain {
   flex: 2;
+  flex-direction: column;
   max-width: 40em;
   min-width: 20em;
+}
+
+#explain-title{
+  text-align: center;
 }
 
 .buttons {
