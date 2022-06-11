@@ -3,14 +3,29 @@
     <div class="content-container">
       <div class="box explain">
         <h1 id="explain-title">방송에서 많이 봤던 1초 듣고 음악 맞히기!!</h1>
-        <br/>
-        <h3>난이도 설명</h3>
-        <p>쉬움:</p>
-        <p>보통:</p>
-        <p>어려움:</p>
-      </div>
-      <div class="box buttons">
-        여기에 난이도와 년도 선택하는 거 넣고
+        <div class="radio-container">
+          <h3>난이도 선택</h3>
+            <label class="radio-label">
+              <input type="radio" name="difficulty" v-model="selectedDifficulty" value="easy" id="easy">
+              <p class="radio-explain">쉬움: 가수 표시 O, 노래 재생 시간 3초</p>
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="difficulty" v-model="selectedDifficulty" value="normal" id="normal">
+              <p class="radio-explain">보통: 가수 표시 X, 노래 재생 시간 2초</p>
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="difficulty" v-model="selectedDifficulty" value="hard" id="hard">
+              <p class="radio-explain">어려움: 가수 표시 X, 노래 재생 시간 1초</p>
+            </label>
+        </div>
+        <div class="year-container">
+          <h3>연도 선택</h3>
+            <select v-model="selectedComboItem" class="combobox">
+              <option v-for="(year,index) in comboItems" :key="index" v-bind:value="{ year }">
+                {{ year }} 년
+              </option>
+            </select>
+        </div>
       </div>
     </div>
     <div class="submit-container">
@@ -23,9 +38,35 @@
 
 <script>
 export default {
-  methods:{
-    startQuiz: function (){
-      console.log("버튼 눌렸는지 테스트")
+  watch: {
+    selectedDifficulty() {
+      console.log(this.selectedDifficulty)
+    },
+    selectedComboItem() {
+      console.log(this.selectedComboItem)
+    },
+  },
+  created() {
+    for(let i = 2000; i <= 2021; i++)
+      this.comboItems.push(i)
+    console.log(this.comboItems.length)
+  },
+  data() {
+    return {
+      selectedDifficulty: "",
+      selectedComboItem: "",
+      comboItems: []
+    }
+  },
+  methods: {
+    startQuiz: function () {
+      if (this.selectedDifficulty == ""){
+        alert("난이도를 선택해주세요!")
+      } else if(this.selectedComboItem == ""){
+        alert("연도를 선택해주세요!")
+      } else{
+        console.log("버튼 눌렸는지 테스트")
+      }
     }
   }
 }
@@ -39,7 +80,7 @@ export default {
   font-style: normal;
 }
 
-#body{
+#body {
   background-image: url("../../assets/beach.jpg");
   background-size: 100%;
   padding: 1em;
@@ -75,14 +116,49 @@ export default {
   min-width: 20em;
 }
 
-#explain-title{
+#explain-title {
   text-align: center;
 }
 
-.buttons {
-  flex: 1;
-  max-width: 30em;
-  min-width: 15em;
+.radio-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  height: 3em;
+}
+
+input[type="radio"] {
+  transition: all 0.3s ease 0s;
+  color: #ffe085;
+}
+
+input[type="radio"]:checked {
+  transform: scale(150%);
+}
+
+input[type="radio"]:checked{
+  transform: scale(150%);
+}
+
+.radio-explain {
+  margin-left: 10px;
+}
+
+.combobox{
+  width: 80px;
+  height: 35px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.combobox option {
+  background: black;
+  color: #fff;
+  padding: 3px 0;
 }
 
 .submit-container {
@@ -108,7 +184,7 @@ export default {
   outline: none;
 }
 
-#submit-button:hover{
+#submit-button:hover {
   background-color: #F24C0C;
   box-shadow: 0px 15px 20px rgba(242, 76, 14, 0.4);
   color: white;
