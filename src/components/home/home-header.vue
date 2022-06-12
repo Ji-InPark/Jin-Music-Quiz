@@ -16,6 +16,7 @@
     justify-content: center;
     font-family: SUIT-Medium;
     font-size: 72px;
+    font-weight: bold;
     color: white;
     background-color: #86F0C8;
     padding: 0.2em;
