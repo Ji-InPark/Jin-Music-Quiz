@@ -21,7 +21,7 @@
   align-items: center;
   justify-content: end;
   opacity: 0.9;
-  height: 7.5em;
+  height: 8.3em;
   font-family: SUIT-Medium;
 }
 
