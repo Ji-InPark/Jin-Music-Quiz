@@ -83,7 +83,7 @@ export default {
 
 #body {
   background-image: url("../../assets/beach.jpg");
-  background-size: 100%;
+  background-size: cover;
   padding: 1em;
 }
 
