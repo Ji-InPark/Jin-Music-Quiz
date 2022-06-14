@@ -1,5 +1,5 @@
 <template>
-  <QuizHeader></QuizHeader>
+  <QuizHeader v-bind:difficulty="this.difficulty" :year=this.year></QuizHeader>
 </template>
 
 <script>
@@ -13,16 +13,18 @@ export default {
   props: {
     difficulty: {
       type: String,
-      default: "middle"
+      default: null
     },
     year: {
-      type: Number,
-      default: 2010
+      type: String,
+      default: null
     }
   },
   created() {
-    console.log(this.difficulty)
-    console.log(this.year)
+    if(this.difficulty === null || this.year === null) {
+      alert("잘못된 접근입니다.")
+      this.$router.push('/home')
+    }
   }
 }
 </script>
