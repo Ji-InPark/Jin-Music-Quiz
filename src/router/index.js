@@ -10,7 +10,10 @@ const routes = [
     component: () => import('../views/home-page')
   },
   {
-    path: '/quiz'
+    path: '/quiz',
+    name: 'quiz-page',
+    component: () => import('../views/quiz-page'),
+    props: true
   }
 ]
 

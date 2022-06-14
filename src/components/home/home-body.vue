@@ -41,14 +41,6 @@
 
 <script>
 export default {
-  watch: {
-    selectedDifficulty() {
-      console.log(this.selectedDifficulty)
-    },
-    selectedComboItem() {
-      console.log(this.selectedComboItem)
-    },
-  },
   created() {
     for(let i = 2000; i <= 2021; i++)
       this.comboItems.push(i)
@@ -68,7 +60,13 @@ export default {
       } else if(this.selectedComboItem === ""){
         alert("연도를 선택해주세요!")
       } else{
-        console.log("버튼 눌렸는지 테스트")
+        this.$router.push({
+          name: 'quiz-page',
+          params: {
+            difficulty: this.selectedDifficulty,
+            year: this.selectedComboItem.year
+          }
+        })
       }
     }
   }
