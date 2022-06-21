@@ -6,15 +6,15 @@
         <div class="radio-container">
           <h3>난이도 선택</h3>
             <label class="radio-label">
-              <input type="radio" name="difficulty" v-model="selectedDifficulty" value="easy" id="easy">
+              <input type="radio" name="difficulty" v-model="selectedDifficulty" value="3" id="easy">
               <p class="radio-explain">쉬움: 가수 표시 ⭕, 노래 재생 시간 3초</p>
             </label>
             <label class="radio-label">
-              <input type="radio" name="difficulty" v-model="selectedDifficulty" value="normal" id="normal">
+              <input type="radio" name="difficulty" v-model="selectedDifficulty" value="2" id="normal">
               <p class="radio-explain">보통: 가수 표시 ❌, 노래 재생 시간 2초</p>
             </label>
             <label class="radio-label">
-              <input type="radio" name="difficulty" v-model="selectedDifficulty" value="hard" id="hard">
+              <input type="radio" name="difficulty" v-model="selectedDifficulty" value="1" id="hard">
               <p class="radio-explain">어려움: 가수 표시 ❌, 노래 재생 시간 1초</p>
             </label>
         </div>
