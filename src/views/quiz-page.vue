@@ -1,14 +1,14 @@
 <template>
-  <QuizHeader v-bind:difficulty="this.difficulty" :year=this.year></QuizHeader>
+  <QuizBody v-bind:difficulty="this.difficulty" :year=this.year></QuizBody>
 </template>
 
 <script>
-import QuizHeader from '../components/quiz/quiz-header'
+import QuizBody from '../components/quiz/quiz-body'
 
 export default {
   name: 'quiz-page',
   components: {
-    'QuizHeader': QuizHeader
+    'QuizBody': QuizBody
   },
   props: {
     difficulty: {
