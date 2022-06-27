@@ -20,7 +20,8 @@
     </div>
     <div id="user-input-container">
       <p id="showing-answer">{{userAnswer}}</p>
-      <input type="text" v-bind:value="userAnswer" @input="changeUserAnswer" placeholder="노래 제목을 적어주세요." maxlength="20" id="user-input-answer"/>
+      <input type="text" v-model="userAnswer" placeholder="노래 제목을 적어주세요." maxlength="20" id="user-input-answer"/>
+      <button id="replay-button">정답 제출</button>
     </div>
   </div>
 </template>
@@ -41,6 +42,7 @@ export default {
     userAnswer(){
       // 여기다가 자동완성 관련 기능 넣기
       console.log(this.userAnswer)
+      this.autoCompleteUserAnswer()
     }
   },
   data() {
@@ -53,7 +55,8 @@ export default {
       isPlaying: false,
       userAnswer: "",
       answerList: [],
-      summitButtonClicked: true
+      summitButtonClicked: true,
+      autoCompleteList: []
     }
   },
   methods: {
@@ -80,6 +83,10 @@ export default {
     },
     changeUserAnswer(e){
       this.userAnswer = e?.target.value
+    },
+    autoCompleteUserAnswer:  function () {
+      this.autoCompleteList = []
+      // 여기에 대충 api 통신 해야겠죠?
     }
   }
 }
@@ -155,6 +162,8 @@ export default {
   align-items: center;
   justify-content: space-evenly;
   min-width: 40em;
+  min-height: 40em;
+  max-height: 60em;
 }
 
 #showing-answer{
